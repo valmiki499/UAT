@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="jenkinTestpractise.TestNGListners"/>
+  </listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="jenkinTestpractise.NewTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="jenkinTestpractise.NewTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="f"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- jenkinTestpractise.NewTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
