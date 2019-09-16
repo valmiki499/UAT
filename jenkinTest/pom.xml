@@ -57,7 +57,7 @@
 					</suiteXmlFiles>
 					<systemPropertyVariables>
 						<executionUrl>${Url}</executionUrl>
-					
+					<Browserexecution>${browser}</Browserexecution>
 					</systemPropertyVariables>
 				</configuration>
 

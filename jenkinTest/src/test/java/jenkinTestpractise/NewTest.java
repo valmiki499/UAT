@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -41,14 +42,25 @@ public class NewTest {
 	  
 	  
   }
+	@Parameters("browser")
   @BeforeTest
-  public void beforeTest() {
+  public void beforeTest(String browser) {
 	  
 	  //WebDriverManager.chromedriver().setup();
-	 System.setProperty("webdriver.chrome.driver", "D:\\valmiki\\chromedriver.exe");
-	 ChromeOptions opt= new ChromeOptions();
-	 opt.addArguments("--disable-notification");
-	  driver= new ChromeDriver(opt);
+	  
+	  if(browser.equals("chrome"))
+	  {
+			System.setProperty("webdriver.chrome.driver", "D:\\valmiki\\chromedriver.exe");
+			ChromeOptions opt = new ChromeOptions();
+			opt.addArguments("--disable-notification");
+			driver = new ChromeDriver(opt);
+	  }
+	  else if(browser.equalsIgnoreCase("firefox"))
+		{
+			
+			System.setProperty("webdriver.gecko.driver", "D:\\valmiki\\Selenium program New\\demo\\driver\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		}
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  driver.manage().window().maximize();
   }
