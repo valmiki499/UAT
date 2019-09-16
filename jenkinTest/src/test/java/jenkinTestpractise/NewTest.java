@@ -58,7 +58,7 @@ public class NewTest {
 	  else if(browser.equalsIgnoreCase("firefox"))
 		{
 			
-			System.setProperty("webdriver.gecko.driver", "D:\\valmiki\\Selenium program New\\demo\\driver\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "D:\\valmiki\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
