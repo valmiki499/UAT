@@ -21,62 +21,56 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-
 //@Listeners(jenkinTestpractise.TestNGListners.class)
 public class NewTest {
 	WebDriver driver;
-	
-@Parameters("Url")
-  @Test
-  public void f(String Url) throws Exception {
-	  
-	  
-	  //driver.get("http://demo.guru99.com/test/guru99home/");
-	  driver.get(Url);
-//	  String title = driver.getTitle();
-//	  Assert.assertTrue(title.contains("Google"));
-//	  Excelcode.configexcel(Excelcode.excelpath, "Sheet1");
-//	  String val= Excelcode.Getexceldata(1, 0);
-//	  System.out.println(val);
-//	  driver.findElement(By.xpath("//input[@name='q']")).sendKeys(val);
-	  
-	  
-  }
+
+	@Parameters("Url")
+	@Test
+	public void f(String Url) throws Exception {
+
+		// driver.get("http://demo.guru99.com/test/guru99home/");
+		driver.get(Url);
+		// String title = driver.getTitle();
+		// Assert.assertTrue(title.contains("Google"));
+		// Excelcode.configexcel(Excelcode.excelpath, "Sheet1");
+		// String val= Excelcode.Getexceldata(1, 0);
+		// System.out.println(val);
+		// driver.findElement(By.xpath("//input[@name='q']")).sendKeys(val);
+
+	}
+
 	@Parameters("browser")
-  @BeforeTest
-  public void beforeTest(String browser) {
-	  
-	  //WebDriverManager.chromedriver().setup();
-	  
-	  if(browser.equals("chrome"))
-	  {
+	@BeforeTest
+	public void beforeTest(String browser) {
+
+		// WebDriverManager.chromedriver().setup();
+
+		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\valmiki\\chromedriver.exe");
 			ChromeOptions opt = new ChromeOptions();
 			opt.addArguments("--disable-notification");
 			driver = new ChromeDriver(opt);
-	  }
-	  else if(browser.equalsIgnoreCase("firefox"))
-		{
 			
+		} else if (browser.equalsIgnoreCase("firefox")) {
+
 			System.setProperty("webdriver.gecko.driver", "D:\\valmiki\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	  driver.manage().window().maximize();
-  }
-  
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+	}
 
-  @AfterMethod
-  public void afterTest(ITestResult result) throws IOException {
-	  
-	  if(ITestResult.FAILURE==result.getStatus())
-	  {
-		  TakesScreenshot ts=((TakesScreenshot)driver);
-		  File source=ts.getScreenshotAs(OutputType.FILE);
-		  File des= new File("D:\\valmiki\\Selenium program New\\jenkinTest\\screenshot\\test3.png");
-		  FileUtils.copyFile(source, des);
-	  }
-	  driver.quit();	
-  }
+	@AfterMethod
+	public void afterTest(ITestResult result) throws IOException {
+
+		if (ITestResult.FAILURE == result.getStatus()) {
+			TakesScreenshot ts = ((TakesScreenshot) driver);
+			File source = ts.getScreenshotAs(OutputType.FILE);
+			File des = new File("D:\\valmiki\\Selenium program New\\jenkinTest\\screenshot\\test3.png");
+			FileUtils.copyFile(source, des);
+		}
+		driver.quit();
+	}
 
 }
