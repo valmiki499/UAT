@@ -26,14 +26,13 @@ import org.testng.annotations.Test;
 public class NewTest {
 	WebDriver driver;
 
-	
 	@Test
 	public void f() throws Exception {
 
 		// driver.get("http://demo.guru99.com/test/guru99home/");
 		Excelcode.configexcel(Excelcode.excelpath, "Sheet1");
-		String Username= Excelcode.Getexceldata(1, 0);
-		String password= Excelcode.Getexceldata(1, 1);
+		String Username = Excelcode.Getexceldata(1, 0);
+		String password = Excelcode.Getexceldata(1, 1);
 		driver.findElement(By.id("Email")).sendKeys(Username);
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.className("sub-mit")).click();
@@ -47,9 +46,9 @@ public class NewTest {
 
 	}
 
-	@Parameters({"browser","Url"})
+	@Parameters({ "browser", "Url" })
 	@BeforeTest
-	public void beforeTest(String browser,String Url) {
+	public void beforeTest(String browser, String Url) {
 
 		// WebDriverManager.chromedriver().setup();
 
@@ -58,7 +57,7 @@ public class NewTest {
 			ChromeOptions opt = new ChromeOptions();
 			opt.addArguments("--disable-notification");
 			driver = new ChromeDriver(opt);
-			
+
 		} else if (browser.equalsIgnoreCase("firefox")) {
 
 			System.setProperty("webdriver.gecko.driver", "D:\\valmiki\\geckodriver.exe");
@@ -69,17 +68,15 @@ public class NewTest {
 		driver.manage().window().maximize();
 		driver.get(Url);
 	}
-	
-	@AfterTest //we can also use @AfterMethod
-	public void setupclosed()
-	{
+
+	@AfterTest // we can also use @AfterMethod
+	public void setupclosed() {
 		driver.quit();
 	}
 
 	@AfterMethod
 	public void afterTest(ITestResult result) throws IOException {
-		
-		
+
 		if (ITestResult.FAILURE == result.getStatus()) {
 			System.out.println("Inside takescreenshot method");
 			TakesScreenshot ts = ((TakesScreenshot) driver);
@@ -88,7 +85,7 @@ public class NewTest {
 			FileUtils.copyFile(source, des);
 			driver.quit();
 		}
-		
+
 	}
 
 }
