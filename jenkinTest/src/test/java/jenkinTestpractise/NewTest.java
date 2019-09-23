@@ -31,6 +31,7 @@ public class NewTest  extends commonfunction{
 		logger.info("Starting Application");
 		browserexecution(browser,Url);
 		
+		
 	}
 	
 	
@@ -48,7 +49,8 @@ public class NewTest  extends commonfunction{
 		
 		Brandpage objbrandpage=PageFactory.initElements(driver,Brandpage.class );
 		logger=report.createTest("Search for brand");
-		objbrandpage.Searchproduct();
+		objbrandpage.Searchproduct(driver);
+		
 				
 		Thread.sleep(5000);
 		

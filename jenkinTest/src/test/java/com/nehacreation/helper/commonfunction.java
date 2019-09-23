@@ -61,10 +61,16 @@ public class commonfunction {
 		driver.get(Url);
 	}
 	
-	public static void Action(WebDriver driver,WebElement element)
+	public static void Actionmoveto(WebDriver driver,WebElement element)
 	{
 		Actions act= new Actions(driver);
 		act.moveToElement(element).perform();
+	}
+	
+	public static void Actionmovetoandclick(WebDriver driver,WebElement element,WebElement element2)
+	{
+		Actions act= new Actions(driver);
+		act.moveToElement(element).click(element2).build().perform();
 	}
 	
 	public static String failed(WebDriver driver)
