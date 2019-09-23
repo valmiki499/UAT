@@ -18,7 +18,24 @@ import com.nehacreation.pages.loginpage;
 //@Listeners(jenkinTestpractise.TestNGListners.class)
 public class NewTest  extends commonfunction{
 	
+		
+	
+	@Parameters({ "browser", "Url" })
+	@BeforeTest
+	public void beforeTest(String browser, String Url) {
 
+		// WebDriverManager.chromedriver().setup();
+		
+		logger=report.createTest("Browser Launch");
+		System.out.println("this is" + logger);
+		logger.info("Starting Application");
+		browserexecution(browser,Url);
+		
+	}
+	
+	
+	
+	
 	@Test
 	public void f() throws Exception {
 
@@ -37,24 +54,9 @@ public class NewTest  extends commonfunction{
 		
 		
 		
-		// String title = driver.getTitle();
-		// Assert.assertTrue(title.contains("Google"));
-		// Excelcode.configexcel(Excelcode.excelpath, "Sheet1");
-		// String val= Excelcode.Getexceldata(1, 0);
-		// System.out.println(val);
-		// driver.findElement(By.xpath("//input[@name='q']")).sendKeys(val);
-
 	}
 
-	@Parameters({ "browser", "Url" })
-	@BeforeTest
-	public void beforeTest(String browser, String Url) {
-
-		// WebDriverManager.chromedriver().setup();
-		logger.info("Starting Application");
-		browserexecution(browser,Url);
-		
-	}
+	
 
 	@AfterTest // we can also use @AfterMethod
 	public void setupclosed() {

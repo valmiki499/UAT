@@ -26,21 +26,21 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class commonfunction {
 	
+	public static WebDriver driver;
 	public ExtentReports report; 
 	public ExtentTest logger;
-	ExtentHtmlReporter extents;
 	
 	public commonfunction()
 	{
 		
 		Reporter.log("Setting up reports and Test is getting ready",true);
-		extents= new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/Report/+"+getCurrentdateandTime()+".html"));
+		ExtentHtmlReporter extents= new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/Report/+"+getCurrentdateandTime()+".html"));
 		report= new ExtentReports();
 		report.attachReporter(extents);
 		Reporter.log("Setting done - Test can be start",true);
 	}
 	
-	public  static WebDriver driver;
+	
 	
 	public static void browserexecution(String browser,String Url)
 	{
