@@ -1,4 +1,4 @@
-package jenkinTestpractise;
+package com.nehacreation.helper;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,7 +21,7 @@ public class Excelcode {
 	
 	//path of excel sheet
 	//public static String excelpath ="D:\\ARRA Project\\ARRAtestscript.xlsx"; 
-	public static String excelpath ="D:\\valmiki\\Selenium program New\\jenkinTest\\GoogleSearch.xlsx"; 
+	public static String excelpath ="D:\\valmiki\\Selenium program New\\jenkinTest\\Data\\GoogleSearch.xlsx"; 
 	
 	public static void configexcel(String path, String sheetname) throws Exception
 	{
