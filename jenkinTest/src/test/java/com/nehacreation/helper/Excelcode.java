@@ -23,8 +23,6 @@ public class Excelcode {
 	//public static String excelpath ="D:\\ARRA Project\\ARRAtestscript.xlsx"; 
 	public static String excelpath ="D:\\valmiki\\Selenium program New\\jenkinTest\\Data\\GoogleSearch.xlsx"; 
 	
-	//public static String excelpath2 ="C:\\Users\\valmiki\\git\\UAT\\jenkinTest\\Data\\GoogleSearch.xlsx";
-	
 	public static void configexcel(String path, String sheetname) throws Exception
 	{
 		
