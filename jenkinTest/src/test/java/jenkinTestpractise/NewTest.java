@@ -13,6 +13,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.nehacreation.helper.Excelcode;
 import com.nehacreation.helper.commonfunction;
 import com.nehacreation.pages.Brandpage;
+import com.nehacreation.pages.OrderConfirmation;
 import com.nehacreation.pages.loginpage;
 
 //@Listeners(jenkinTestpractise.TestNGListners.class)
@@ -50,6 +51,12 @@ public class NewTest  extends commonfunction{
 		Brandpage objbrandpage=PageFactory.initElements(driver,Brandpage.class );
 		logger=report.createTest("Search for brand");
 		objbrandpage.Searchproduct(driver);
+		
+		
+		OrderConfirmation objOrderConfirmation=PageFactory.initElements(driver,OrderConfirmation.class );
+		logger=report.createTest("Update Delivery Address");
+		objOrderConfirmation.OrderConfirmationdetails();
+		
 		
 				
 		Thread.sleep(5000);

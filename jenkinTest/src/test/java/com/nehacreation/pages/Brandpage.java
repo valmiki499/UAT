@@ -24,14 +24,6 @@ public class Brandpage {
 	@FindBy(how=How.XPATH,using="//a[@class='shoping-icon']//img[@class='img-responsive']")
 	public WebElement elecarticon; 
 	
-	//*[@id="grid_View"]/div[1]/div[3]
-	//*[@id="grid_View"]/div[1]/div[3]
-	//*[@id="grid_View"]/div[1]/div[3]
-	//*[@id="grid_View"]/div[1]/div[2]/div/div/div[1]
-	//*[@id="grid_View"]/div[1]/div[2]/div/div/div[1]
-	//*[@id="grid_View"]/div[1]/div[3]/div/div/div[1]
-	//*[@id="grid_View"]/div[1]/div[4]/div/div/div[1]
-	//*[@id="grid_View"]/div[1]/div[4]/div/div/div[1]
 	
 	
 	public void Searchproduct(WebDriver driver)
@@ -53,7 +45,6 @@ public class Brandpage {
 			{
 				commonfunction.Actionmovetoandclick(driver,driver.findElement(By.xpath("//*[@id='grid_View']/div[1]/div["+j+"]/div/div/h3")),driver.findElement(By.xpath("//h3[contains(text(),'Add to Cart')]")));
 				break;
-				//*[@id="grid_View"]/div[1]/div[10]/div/div/div[2]/div/a/h3
 			}
 			
 		}
@@ -76,9 +67,11 @@ public class Brandpage {
 				if(list.contains(actualproductname))
 				{
 					driver.findElement(By.xpath("/html/body/section[3]/div[2]/div/div[2]/div[7]/button[2]")).click();
+					break;
 				}
 				
 			}
+			
 			
 			
 			//html[1]/body[1]/section[3]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/a[1]
