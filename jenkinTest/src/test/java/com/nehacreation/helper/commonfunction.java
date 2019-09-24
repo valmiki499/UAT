@@ -55,7 +55,7 @@ public class commonfunction {
 			System.setProperty("webdriver.gecko.driver", "D:\\valmiki\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(Url);
